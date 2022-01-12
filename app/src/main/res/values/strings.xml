@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ViewAndViewModelTest</string>
+    <string name="button">Start countdown</string>
+    <string name="timer_text">0</string>
+    <string name="insert_time_hint">Enter seconds (e.g. 18)</string>
+    <string name="cancel_countdown">Cancel countdown</string>
+</resources>
