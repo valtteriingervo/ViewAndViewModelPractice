@@ -29,7 +29,8 @@
         android:layout_marginTop="48dp"
         android:text="@string/button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        android:backgroundTint="@color/start_blue"/>
 
     <Button
         android:id="@+id/cancel_button"
@@ -40,7 +41,8 @@
         android:text="@string/cancel_countdown"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        android:backgroundTint="@color/cancel_red"/>
 
     <EditText
         android:id="@+id/editTextNumber"
@@ -61,7 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginTop="136dp"
+        android:backgroundTint="@color/pause_red"
         android:text="Pause"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
@@ -74,5 +78,17 @@
         android:text="resume"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        android:backgroundTint="@color/resume_green"/>
+
+    <TextView
+        android:id="@+id/display_seconds_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="64dp"
+        android:text="s"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/result"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

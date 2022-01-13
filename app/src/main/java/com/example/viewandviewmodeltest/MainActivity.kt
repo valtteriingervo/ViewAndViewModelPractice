@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             clickResumeButton(viewModel)
         }
 
+        // Show timers seconds on
         viewModel.seconds.observe(this, Observer {
             // it refers to the 'seconds' variable we are observing
             textView.text = it.toString()
@@ -80,8 +81,15 @@ class MainActivity : AppCompatActivity() {
             // Hide the start button
             startButton.visibility = View.GONE
 
+            // Hide the insert seconds field
+            editTextSeconds.visibility = View.GONE
+
             // And show the cancel button
             cancelButton.visibility = View.VISIBLE
+
+            // Show the pause button
+            pauseButton.visibility = View.VISIBLE
+
         }
         else {
             Toast.makeText(this, "Please enter seconds before starting timer", Toast.LENGTH_SHORT).show()
@@ -95,11 +103,24 @@ class MainActivity : AppCompatActivity() {
         // Hide the cancel button
         cancelButton.visibility = View.GONE
 
-        // And show the start button
+        // Show the start button
         startButton.visibility = View.VISIBLE
+
+        // And bring back the insert seconds field
+        editTextSeconds.visibility = View.VISIBLE
+
+        // Hide the pause button since now there is no timer to pause
+        pauseButton.visibility = View.GONE
+
+        // The resume button also needs to be hidden
+        resumeButton.visibility = View.GONE
 
         // Reset the TextView to 0
         textView.text = "0"
+
+
+        // Make Toast
+        Toast.makeText(this, "Timer cancelled", Toast.LENGTH_SHORT).show()
 
     }
 
@@ -112,6 +133,9 @@ class MainActivity : AppCompatActivity() {
 
         // Show the resume button
         resumeButton.visibility = View.VISIBLE
+
+        // Make Toast
+        Toast.makeText(this, "Timer paused", Toast.LENGTH_SHORT).show()
     }
 
     private fun clickResumeButton(vm: MainActivityViewModel) {
@@ -123,6 +147,10 @@ class MainActivity : AppCompatActivity() {
 
         // Show the pause button
         pauseButton.visibility = View.VISIBLE
+
+        // Make Toast
+        Toast.makeText(this, "Timer resumed", Toast.LENGTH_SHORT).show()
+
     }
 
 }
